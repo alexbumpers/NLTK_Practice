@@ -211,7 +211,7 @@ import nltk
 ## genres. Which has the lowest diversity? Is this expected?)
 ## Prints correct values, but not in table format.
 
-from nltk.corpus import brown
+#from nltk.corpus import brown
 #def brown_table():
     #brown_cats = nltk.corpus.brown.categories()
 
@@ -225,3 +225,53 @@ from nltk.corpus import brown
 #print brown_table()
 
 ## Exercise 17
+
+## Defines function to find 50 most frequently occuring words that are not
+## stopwords.
+import nltk.corpus
+from nltk.book import *
+from nltk import FreqDist
+
+
+#def FDIST_NONSTOPS(text):
+    #stopwords = nltk.corpus.stopwords.words('english')
+    #nonstops50_fdist = FreqDist([w for w in text if w not in stopwords])
+    #return nonstops50_fdist.items()[:50]
+#stopwords = nltk.corpus.stopwords.words('english')
+#content = [w for w in text if w.lower() not in stopwords]
+#return float(len(content)) / float(len(text))
+    #nonstops50_cfdist = nonstops50_fdist.plot(50, cumulative=True)
+    #print nonstops50_cfdist
+    #return nonstops50_cfdist;
+#print FDIST_NONSTOPS(text1)
+
+#def PLOT_NONSTOPS():
+    #nonstop_plot = FreqDist(text1).plot(50, cumulative=True)
+    #return nonstop_plot
+
+#PLOT_NONSTOPS()
+
+#def content_fraction(text):
+    #stopwords = nltk.corpus.stopwords.words('english')
+    #content = [w for w in text if w.lower() not in stopwords]
+    #return float(len(content)) / float(len(text))
+
+#print content_fraction(text1)
+
+## Exercise 18
+## Write a program to print 50 most frequent bigrams, omitting bigrams that
+## contain stopwords.
+from nltk.util import bigrams
+
+def FIFTY_BIGRAMS(text):
+    bigrams = nltk.bigrams(text)
+    stopwords = nltk.corpus.stopwords.words('english')
+    bigrams50_fdist = FreqDist([w for w in bigrams if w[1] not in stopwords])
+    return bigrams50_fdist.items()[:50]
+
+print FIFTY_BIGRAMS(text1)
+
+## Exercise 19
+## Write a program to create a table of word frequencies by genre, like the one
+## given in section 2.1 for modals. Choose your own words and try to find words
+## whose presence (or absenece) is typical of a genre. Discuss findings.
