@@ -1,0 +1,5 @@
+This is the second text file for the NLTK! 
+In this file, we will have a few more sentences and fragments.
+This is a sentence right here!
+Hopefully we an access this file correctly...
+Let's give it a shot!
