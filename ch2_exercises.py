@@ -229,7 +229,7 @@ import nltk
 ## Defines function to find 50 most frequently occuring words that are not
 ## stopwords.
 import nltk.corpus
-from nltk.book import *
+#from nltk.book import *
 from nltk import FreqDist
 
 
@@ -261,17 +261,62 @@ from nltk import FreqDist
 ## Exercise 18
 ## Write a program to print 50 most frequent bigrams, omitting bigrams that
 ## contain stopwords.
-from nltk.util import bigrams
+#from nltk.util import bigrams
 
-def FIFTY_BIGRAMS(text):
-    bigrams = nltk.bigrams(text)
-    stopwords = nltk.corpus.stopwords.words('english')
-    bigrams50_fdist = FreqDist([w for w in bigrams if w[1] not in stopwords])
-    return bigrams50_fdist.items()[:50]
+#def FIFTY_BIGRAMS(text):
+    #bigrams = nltk.bigrams(text)
+    #stopwords = nltk.corpus.stopwords.words('english')
+    #bigrams50_fdist = FreqDist([w for w in bigrams if w[1] not in stopwords])
+    #return bigrams50_fdist.items()[:50]
 
-print FIFTY_BIGRAMS(text1)
+#print FIFTY_BIGRAMS(text1)
 
 ## Exercise 19
 ## Write a program to create a table of word frequencies by genre, like the one
 ## given in section 2.1 for modals. Choose your own words and try to find words
 ## whose presence (or absenece) is typical of a genre. Discuss findings.
+
+from nltk.corpus import brown
+
+#cfd = nltk.ConditionalFreqDist(
+            #(genre, word)
+            #for genre in brown.categories()
+            #for word in brown.words(categories=genre))
+#genres = ['news', 'religion', 'hobbies', 'science_fiction', 'romance', 'humor']
+#genre_words = ['truth', 'God', 'work', 'love', 'word', 'believe']
+#print cfd.tabulate(conditions=genres, samples=genre_words)
+
+## Exercise 20
+## Write a function word_freq() that takes a word and the name of a section of
+## the Brown corpus as arguments, and computes the frequency of the word in
+## that section of the corpus.
+
+
+#def word_freq(word, section):
+    #word_fdist = FreqDist([w for w in nltk.corpus.brown.words(categories=section)])
+    #return word_fdist.__getitem__(word)
+
+#print word_freq('yes', 'romance')
+
+## Exercise 21
+## Write a program to guess the number of syllables contained in a text, making
+## use of the CMU Pronouncing Dictionary.
+## DOES NOT WORK! STALLS AFTER IMPORT NLTK.BOOK
+#from nltk.book import *
+#from nltk.corpus import cmudict
+
+#def text_syllables(text):
+    #new_entries = [y for x, y in enumerate(nltk.corpus.cmudict.entries()) if y[0] in text]
+    #done_ent = []
+    #tot_len = 0
+    #for entry in new_entries:
+        #if entry[0] not in done_ent:
+            #tot_len += len(entry[1])
+            #done_ent.append(entry[0])
+    #return tot_len
+#print text_syllables(text1)
+
+
+## Exercise 22 (see book)
+
+#COME BACK TO CH2 EXERCISES LATER
