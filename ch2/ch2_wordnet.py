@@ -1,10 +1,10 @@
 import nltk
 from nltk.corpus import wordnet as wn
 
-print wn.synsets('motorcar')
+print(wn.synsets('large'))
 ## ^^^^ synset is a synonym set - a collection of synonymous words (or 'lemmas')
 ##prints [Synset('car.n.01')] which is the first noun sense of car
-print wn.synset('car.n.01').lemma_names
+"""print wn.synset('car.n.01').lemma_names
 ##definition of 'car'
 print wn.synset('car.n.01').definition
 ##example sentence with 'car'
@@ -23,3 +23,4 @@ print wn.synsets('car')
 for synset in wn.synsets('car'):
     print synset.lemma_names
 print wn.lemmas('car')
+"""
